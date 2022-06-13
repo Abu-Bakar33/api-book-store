@@ -10,6 +10,8 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(express.json());
 
+var port = process.env.PORT || 3000;
+
 // database connection
 const url = `mongodb+srv://Abu-Bakarr:5C25Rpho61aq4ZvQ@cluster0.0foji.mongodb.net/BookStore?retryWrites=true&w=majority`;
 mongoose
@@ -83,4 +85,4 @@ app.delete("/api/books/delete/:id", (req, res) => {
     res.send(Book);
   });
 });
-app.listen(3000);
+app.listen(port);
