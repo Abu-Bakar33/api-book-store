@@ -26,11 +26,11 @@ mongoose
     console.log(err.message);
   });
 //Home
-app.get("/", async (req, res) => {
-  res.send("Welcome to Book Store");
-});
+// app.get("/", async (req, res) => {
+//   res.send("Welcome to Book Store");
+// });
 //Fetch all data from Db
-app.get("/api/books", async (req, res) => {
+app.get("/", async (req, res) => {
   const data = await Book.find();
   res.send(data);
 });
